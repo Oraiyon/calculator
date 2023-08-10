@@ -23,15 +23,18 @@ function operate(firstNum, operation, secondNum){
         const newArray= [];
         newArray.push(firstNum, secondNum);
         return getSum(newArray);
-    } else if (operation == "-"){
+    }
+    if (operation == "-"){
         const newArray=[];
         newArray.push(firstNum, secondNum);
         return getDifference(newArray);
-    } else if (operation == "*"){
+    }
+    if (operation == "*"){
         const newArray=[];
         newArray.push(firstNum, secondNum);
         return getProduct(newArray);
-    } else {
+    }
+    if (operation == "/"){
         const newArray=[];
         newArray.push(firstNum, secondNum);
         return getQuotient(newArray);
@@ -45,15 +48,25 @@ const operators= ["+", "-", "*", "/"];
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         let displayValue = button.innerText;
-        if (displayValue == "Clear"){
-            display.innerText= "";
-        }
         if (displayValue == "="){
+            //REMOVE CONSOLE.LOG
             if (display.innerText.includes("+")){
                 let splitDisplay= display.innerText.split("+");
-                operate(Number(splitDisplay[0]), "+", Number(splitDisplay[1]));
-            }//CONTINUE WITH OTHER OPERATIONS
+                console.log(operate(Number(splitDisplay[0]), "+", Number(splitDisplay[1])));
+            } 
+            if (display.innerText.includes("-")){
+                let splitDisplay= display.innerText.split("-");
+                console.log(operate(Number(splitDisplay[0]), "-", Number(splitDisplay[1])));
+            } 
+            if (display.innerText.includes("*")){
+                let splitDisplay= display.innerText.split("*");
+                console.log(operate(Number(splitDisplay[0]), "*", Number(splitDisplay[1])));
+            }
+            if (display.innerText.includes("/")){
+                let splitDisplay= display.innerText.split("/");
+                console.log(operate(Number(splitDisplay[0]), "/", Number(splitDisplay[1])));
+            } 
         }
-        display.innerText += displayValue;
+        (displayValue == "Clear") ? display.innerText= "" : display.innerText += displayValue;
     });
 });

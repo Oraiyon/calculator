@@ -45,7 +45,7 @@ const buttons = Array.from(document.querySelectorAll("button"));
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         let displayValue= document.createElement("div");
-        displayValue= button.textContent;
+        (button.textContent == "Clear") ? location.reload() : displayValue= button.textContent;
         display.append(displayValue);
     });
 });

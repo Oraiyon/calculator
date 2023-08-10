@@ -1,4 +1,3 @@
-// MUST TURN BUTTON INPUTS INTO ARRAYS PER EQUATION
 function getSum(array){
     return array.reduce((sum, num) => sum + num);
 }
@@ -40,12 +39,12 @@ function operate(firstNum, operation, secondNum){
 };
 
 const display = document.querySelector(".display");
-const buttons = Array.from(document.querySelectorAll("button"));
+const buttons = document.querySelectorAll("button");
+const operators= ["+", "-", "*", "/"];
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        let displayValue= document.createElement("div");
-        (button.textContent == "Clear") ? location.reload() : displayValue= button.textContent;
-        display.append(displayValue);
+        let displayValue = button.innerText;
+        (displayValue == "Clear") ? display.innerText= "" : display.innerText += displayValue;
     });
 });

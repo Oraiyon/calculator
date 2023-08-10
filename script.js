@@ -15,3 +15,27 @@ function getQuotient(array){
     return array.reduce((quotient, num) => quotient / num);
 }
 
+let firstNum;
+let operation;
+let secondNum;
+
+function operate(firstNum, operation, secondNum){
+    if (operation == "+"){
+        const newArray= [];
+        newArray.push(firstNum, secondNum);
+        return getSum(newArray);
+    } else if (operation == "-"){
+        const newArray=[];
+        newArray.push(firstNum, secondNum);
+        return getDifference(newArray);
+    } else if (operation == "*"){
+        const newArray=[];
+        newArray.push(firstNum, secondNum);
+        return getProduct(newArray);
+    } else {
+        const newArray=[];
+        newArray.push(firstNum, secondNum);
+        return getQuotient(newArray);
+    }
+};
+

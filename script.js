@@ -52,19 +52,23 @@ buttons.forEach(button => {
             //REMOVE CONSOLE.LOG
             if (display.innerText.includes("+")){
                 let splitDisplay= display.innerText.split("+");
-                console.log(operate(Number(splitDisplay[0]), "+", Number(splitDisplay[1])));
+                display.innerText= "";
+                displayValue= operate(Number(splitDisplay[0]), "+", Number(splitDisplay[1]));
             } 
             if (display.innerText.includes("-")){
                 let splitDisplay= display.innerText.split("-");
-                console.log(operate(Number(splitDisplay[0]), "-", Number(splitDisplay[1])));
+                display.innerText= "";
+                displayValue= operate(Number(splitDisplay[0]), "-", Number(splitDisplay[1]));
             } 
             if (display.innerText.includes("*")){
                 let splitDisplay= display.innerText.split("*");
-                console.log(operate(Number(splitDisplay[0]), "*", Number(splitDisplay[1])));
+                display.innerText= "";
+                displayValue= operate(Number(splitDisplay[0]), "*", Number(splitDisplay[1]));
             }
             if (display.innerText.includes("/")){
                 let splitDisplay= display.innerText.split("/");
-                console.log(operate(Number(splitDisplay[0]), "/", Number(splitDisplay[1])));
+                display.innerText= "";
+                displayValue= operate(Number(splitDisplay[0]), "/", Number(splitDisplay[1]));
             } 
         }
         (displayValue == "Clear") ? display.innerText= "" : display.innerText += displayValue;

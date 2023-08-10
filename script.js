@@ -43,13 +43,11 @@ function operate(firstNum, operation, secondNum){
 
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll("button");
-const operators= ["+", "-", "*", "/"];
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         let displayValue = button.innerText;
         if (displayValue == "="){
-            //REMOVE CONSOLE.LOG
             if (display.innerText.includes("+")){
                 let splitDisplay= display.innerText.split("+");
                 display.innerText= "";

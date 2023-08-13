@@ -7,7 +7,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-width: 312px;
+    max-width: 330px;
+    background-color: gray;
+    padding: 8px;
+    border: 1px solid black;
 }
 
 .display{
@@ -15,12 +18,17 @@
     justify-content: flex-end;
     align-items: center;
     height: 75px;
-    border: 1px solid black;
     padding: 8px;
     font-size: 32px;
+    background-color: black;
+    color: white;
 }
 
 .number, .operation, .clear, .equals{
     width: 75px;
     height: 75px;
+}
+
+.operation, .equals, .clear{
+    background-color: orange;
 }
